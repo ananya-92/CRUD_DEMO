@@ -32,5 +32,5 @@ interface CustomerDAO {
     suspend fun deleteAll()
 
     @Query("SELECT * FROM customer_data_table")
-    suspend fun getAllCustomers(): LiveData<List<Customer>>
+    fun getAllCustomers(): LiveData<List<Customer>>
 }

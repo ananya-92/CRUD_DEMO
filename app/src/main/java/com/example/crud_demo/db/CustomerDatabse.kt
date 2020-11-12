@@ -6,10 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 @Database(entities = [Customer::class],version = 1)
-abstract class CustomerDatabse: RoomDatabase {
+abstract class CustomerDatabse: RoomDatabase() {
     abstract  val customerDAO:CustomerDAO
-    @Volatile
+
     companion object{
+        @Volatile
         private var INSTANCE : CustomerDatabse? = null
         fun getInstance(context: Context):CustomerDatabse{
             synchronized(lock = this){

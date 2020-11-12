@@ -6,7 +6,13 @@ android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
 
-    defaultConfig {
+    buildFeatures{
+        dataBinding = true
+        viewBinding = true
+    }
+
+    defaultConfig 
+            {
         applicationId "com.example.crud_demo"
         minSdkVersion 21
         targetSdkVersion 30
@@ -29,9 +35,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    dataBinding {
-        enabled = true
-    }
+
 }
 
 dependencies {
